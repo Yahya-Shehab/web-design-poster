@@ -191,6 +191,102 @@
         }
       }
 
+      /* ---- Students' work section ---- */
+      .students-work {
+        padding: 34px 60px 10px;
+      }
+      .students-work h2 {
+        font-family: "Cairo", sans-serif;
+        font-size: 21px;
+        font-weight: 800;
+        margin: 0 0 4px;
+      }
+      .students-work .sub {
+        font-family: "Tajawal", sans-serif;
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin: 0 0 22px;
+      }
+      .student-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .student-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .student-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 26px -14px rgba(27, 31, 42, 0.3);
+      }
+      .student-img-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/3;
+        background: var(--paper-2);
+        overflow: hidden;
+      }
+      .student-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .img-placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 1.5px dashed #c9c5b8;
+        margin: 8px;
+        border-radius: 8px;
+        font-family: "JetBrains Mono", monospace;
+        color: #a6a28f;
+        text-align: center;
+        padding: 10px;
+      }
+      .img-placeholder svg {
+        width: 26px;
+        height: 26px;
+        opacity: 0.7;
+      }
+      .img-placeholder b {
+        font-family: "Tajawal", sans-serif;
+        font-size: 12.5px;
+        color: #8a8676;
+        font-weight: 500;
+      }
+      .img-placeholder span {
+        font-size: 10.5px;
+        direction: ltr;
+        opacity: 0.8;
+      }
+      .student-card-body {
+        padding: 14px 16px 18px;
+      }
+      .student-card-body h4 {
+        font-family: "Cairo", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0 0 4px;
+        color: var(--ink);
+      }
+      .student-card-body p {
+        font-family: "Tajawal", sans-serif;
+        font-size: 13px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+        margin: 0;
+      }
       @media (max-width: 760px) {
         .poster {
           width: 100%;
@@ -223,14 +319,42 @@
         .line-detail-in {
           padding: 14px 24px 18px 56px;
         }
+        .line-detail-in ul {
+          grid-template-columns: 1fr;
+        }
+        .line.open .line-detail {
+          max-height: 340px;
+        }
         .careers {
           grid-template-columns: 1fr;
           padding: 20px 24px 10px;
+        }
+        .majors-intro {
+          padding: 20px 24px 6px;
+        }
+        .majors-section-title {
+          padding: 18px 24px 12px;
+        }
+        .majors-grid {
+          grid-template-columns: 1fr;
+          padding: 0 24px 8px;
+        }
+        .other-majors {
+          padding: 8px 24px 10px;
+        }
+        .majors-note {
+          margin: 8px 24px 10px;
         }
         .showcase {
           padding: 28px 24px 10px;
         }
         .gallery {
+          grid-template-columns: 1fr;
+        }
+        .students-work {
+          padding: 28px 24px 10px;
+        }
+        .student-grid {
           grid-template-columns: 1fr;
         }
         .terminal {
@@ -581,7 +705,7 @@
         background: var(--paper-2);
       }
       .line.open .line-detail {
-        max-height: 140px;
+        max-height: 260px;
       }
       .line-detail-in {
         padding: 16px 60px 20px 90px;
@@ -592,6 +716,16 @@
       }
       .line-detail-in b {
         color: var(--ink);
+      }
+      .line-detail-in ul {
+        margin: 8px 0 0;
+        padding-inline-start: 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 18px;
+      }
+      .line-detail-in li {
+        margin-bottom: 3px;
       }
 
       /* ---- Careers panel ---- */
@@ -641,6 +775,128 @@
         color: var(--ink-soft);
         line-height: 1.7;
         margin: 0;
+      }
+
+      /* ---- Majors panel (university tracks) ---- */
+      .majors-intro {
+        padding: 24px 60px 6px;
+      }
+      .majors-intro p {
+        font-family: "Tajawal", sans-serif;
+        font-size: 14.5px;
+        color: var(--ink-soft);
+        line-height: 1.8;
+        margin: 0;
+        max-width: 720px;
+      }
+      .majors-section-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 22px 60px 14px;
+      }
+      .majors-section-title h3 {
+        font-family: "Cairo", sans-serif;
+        font-weight: 800;
+        font-size: 17px;
+        margin: 0;
+      }
+      .majors-section-title .count-pill {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11.5px;
+        color: #fff;
+        background: var(--blue);
+        padding: 3px 10px;
+        border-radius: 999px;
+      }
+      .majors-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        padding: 0 60px 8px;
+      }
+      .major-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px;
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+      .major-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 18px -10px rgba(27, 31, 42, 0.22);
+      }
+      .major-card .m-ic {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .major-card .m-ic svg {
+        width: 16px;
+        height: 16px;
+        color: #fff;
+      }
+      .major-card h5 {
+        font-family: "Cairo", sans-serif;
+        font-weight: 700;
+        font-size: 13.5px;
+        margin: 0 0 3px;
+        color: var(--ink);
+      }
+      .major-card p {
+        font-family: "Tajawal", sans-serif;
+        font-size: 12px;
+        color: var(--ink-soft);
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      .other-majors {
+        padding: 8px 60px 10px;
+      }
+      .major-group {
+        margin-bottom: 16px;
+      }
+      .major-group h5 {
+        font-family: "Cairo", sans-serif;
+        font-weight: 700;
+        font-size: 13.5px;
+        margin: 0 0 9px;
+        color: var(--ink-soft);
+      }
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pill {
+        font-family: "Tajawal", sans-serif;
+        font-size: 12.5px;
+        background: var(--paper-2);
+        border: 1px solid var(--line);
+        padding: 6px 13px;
+        border-radius: 999px;
+        color: var(--ink-soft);
+      }
+      .majors-note {
+        margin: 8px 60px 10px;
+        font-family: "Tajawal", sans-serif;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        opacity: 0.8;
+        padding: 12px 16px;
+        background: var(--paper-2);
+        border-radius: 8px;
+        border-inline-start: 3px solid var(--mint);
       }
 
       /* ---- Showcase ---- */
@@ -805,7 +1061,7 @@
       <div class="hero">
         <div class="hero-text reveal">
           <div class="eyebrow">
-            تخصص مهني — الصف الحادي عشر والثاني عشر (التوجيهي)
+            تخصص فني — الصف الحادي عشر والثاني عشر (التوجيهي)
           </div>
           <h1>تصميم <span>صفحات الويب</span></h1>
           <p class="subhead">
@@ -813,7 +1069,7 @@
             الإنترنت. تخصص يجمع بين <b>البرمجة</b> و<b>التصميم</b>، ويؤهلك لبناء
             مواقع حقيقية خطوة بخطوة.
           </p>
-          <div class="typewriter-line" dir="ltr">
+          <div class="typewriter-line">
             <span class="p1">console.log(</span><span id="tw"></span
             ><span class="caret"></span><span class="p2">)</span>
           </div>
@@ -989,7 +1245,9 @@
 
       <div class="tabs reveal">
         <button class="tab-btn active" data-tab="learn">خطة التعلّم</button>
+        <button class="tab-btn" data-tab="students">أعمال طلابنا</button>
         <button class="tab-btn" data-tab="careers">الفرص بعد التخصص</button>
+        <button class="tab-btn" data-tab="majors">المسارات الجامعية</button>
       </div>
 
       <div class="tab-panel active" id="panel-learn">
@@ -1054,8 +1312,16 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> الوسوم الأساسية، بناء نموذج (Form)، الجداول،
-                والوسوم الدلالية (Semantic HTML) لبنية صفحة منظمة.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>الوسوم الأساسية: العناوين، الفقرات، الروابط، الصور</li>
+                  <li>بناء النماذج (Forms) لجمع بيانات المستخدم</li>
+                  <li>الجداول لعرض البيانات المنظمة</li>
+                  <li>
+                    الوسوم الدلالية (Semantic HTML5) لبنية احترافية تناسب محركات
+                    البحث
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1107,8 +1373,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> Flexbox وGrid لبناء تخطيطات مرنة، والتصميم
-                المتجاوب (Responsive) لكل أحجام الشاشات.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>الألوان، الخطوط، والمسافات بين العناصر</li>
+                  <li>نظام Flexbox لتنظيم العناصر أفقيًا وعموديًا</li>
+                  <li>نظام Grid لتخطيطات متعددة الأعمدة</li>
+                  <li>التصميم المتجاوب (Responsive) عبر Media Queries</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1161,8 +1432,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> المتغيرات والدوال، التعامل مع الأحداث (Events)،
-                والتحكم بعناصر الصفحة (DOM) مباشرة.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>المتغيرات، الشروط، والحلقات التكرارية</li>
+                  <li>التعامل مع الأحداث (نقر، كتابة، تمرير)</li>
+                  <li>التحكم بعناصر الصفحة مباشرة (DOM)</li>
+                  <li>التحقق من صحة النماذج قبل الإرسال</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1218,8 +1494,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> نظام الشبكة (Grid System)، المكوّنات الجاهزة
-                كالأزرار والقوائم، وتسريع بناء الواجهات.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>نظام الشبكة (12 عمودًا) لتصميم متجاوب سريع</li>
+                  <li>مكوّنات جاهزة: أزرار، قوائم، بطاقات، نوافذ منبثقة</li>
+                  <li>تخصيص التصميم ليناسب هوية الموقع</li>
+                  <li>تسريع بناء الواجهات بشكل كبير مقارنة بالكود اليدوي</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1271,8 +1552,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> استقبال بيانات النماذج، الاتصال بقواعد البيانات،
-                وبناء صفحات ديناميكية تتغيّر حسب المستخدم.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>المتغيرات والدوال من جهة السيرفر</li>
+                  <li>استقبال ومعالجة بيانات النماذج</li>
+                  <li>الاتصال بقاعدة البيانات وتنفيذ الاستعلامات</li>
+                  <li>إدارة الجلسات (Sessions) وتسجيل الدخول</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1325,8 +1611,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> بناء الجداول، أوامر الإضافة والتعديل والحذف
-                والاستعلام (CRUD)، وربط قاعدة البيانات بالموقع.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>إنشاء الجداول وتحديد أنواع البيانات</li>
+                  <li>أوامر الإضافة والتعديل والحذف والاستعلام (CRUD)</li>
+                  <li>الفلترة والفرز والاستعلامات المتقدمة</li>
+                  <li>العلاقات بين الجداول (قواعد بيانات علائقية)</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1382,8 +1673,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> استضافة المواقع، نقل الملفات عبر FTP، وربط اسم
-                النطاق (Domain) بالموقع.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>اختيار استضافة مناسبة ورفع الملفات عبر FTP</li>
+                  <li>ربط اسم النطاق (Domain) بالموقع</li>
+                  <li>إعداد شهادة الأمان (SSL/HTTPS)</li>
+                  <li>ضبط قاعدة البيانات على السيرفر الحقيقي</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1442,8 +1738,13 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> دمج جميع المهارات السابقة في مشروع تخرج متكامل:
-                موقع متكامل بواجهة وخلفية وقاعدة بيانات.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>دمج الواجهة الأمامية والخلفية بمشروع واحد</li>
+                  <li>بناء لوحة تحكم (Dashboard) لإدارة المحتوى</li>
+                  <li>تسجيل الدخول وحسابات المستخدمين</li>
+                  <li>مشروع تخرج متكامل يحاكي مواقع حقيقية</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1497,8 +1798,220 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b> تركيب القوالب والإضافات، وإدارة محتوى موقع متكامل
-                دون الحاجة لكتابة كل الأكواد يدويًا.
+                <b>ستتعلم:</b>
+                <ul>
+                  <li>تركيب ووردبريس وإعداد لوحة التحكم</li>
+                  <li>اختيار وتخصيص القوالب (Themes)</li>
+                  <li>استخدام الإضافات (Plugins) لتوسيع وظائف الموقع</li>
+                  <li>إدارة المحتوى والصفحات دون كتابة كود</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-students">
+        <!-- ============================================================
+         قسم "أعمال طلابنا" — دليل الإضافة اليدوية للصور:
+         1) أنشئ مجلد باسم images بجانب ملف الـHTML هذا مباشرة.
+         2) ضع صور مشاريع الطلاب داخله، وسمّها بنفس الأسماء
+            المستخدمة أدناه (student-1.jpg وهكذا) — أو غيّر اسم
+            الملف داخل كل src="images/..." ليطابق اسم صورتك.
+         3) عدّل نص العنوان والوصف تحت كل صورة داخل <h4> و <p>.
+         4) طالما الصورة غير موجودة، ستظهر تلقائيًا خانة منقّطة
+            بدلها بشكل مرتّب — فور إضافة الصورة الصحيحة ستحل محلها.
+         5) لإضافة بطاقة أكثر من 6، انسخ بلوك واحد من
+            <div class="student-card"> ... </div> والصقه، وغيّر
+            رقم الصورة (student-7.jpg) والنصوص.
+       ============================================================ -->
+        <div class="students-work">
+          <h2>أعمال طلابنا</h2>
+          <p class="sub">مشاريع حقيقية بناها طلاب التخصص داخل المختبر</p>
+          <div class="student-grid">
+            <div class="student-card">
+              <div class="student-img-wrap">
+                <img
+                  src="images/student-1.jpg"
+                  alt="صورة مشروع طالب 1"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="img-placeholder">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="4" width="18" height="15" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="M3 17l5-5 4 4 3-3 6 6" />
+                  </svg>
+                  <b>ضع صورة المشروع هنا</b>
+                  <span>images/student-1.jpg</span>
+                </div>
+              </div>
+              <div class="student-card-body">
+                <h4>عنوان المشروع (عدّل النص)</h4>
+                <p>اسم الطالب أو وصف قصير عن المشروع.</p>
+              </div>
+            </div>
+
+            <div class="student-card">
+              <div class="student-img-wrap">
+                <img
+                  src="images/student-2.jpg"
+                  alt="صورة مشروع طالب 2"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="img-placeholder">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="4" width="18" height="15" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="M3 17l5-5 4 4 3-3 6 6" />
+                  </svg>
+                  <b>ضع صورة المشروع هنا</b>
+                  <span>images/student-2.jpg</span>
+                </div>
+              </div>
+              <div class="student-card-body">
+                <h4>عنوان المشروع (عدّل النص)</h4>
+                <p>اسم الطالب أو وصف قصير عن المشروع.</p>
+              </div>
+            </div>
+
+            <div class="student-card">
+              <div class="student-img-wrap">
+                <img
+                  src="images/student-3.jpg"
+                  alt="صورة مشروع طالب 3"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="img-placeholder">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="4" width="18" height="15" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="M3 17l5-5 4 4 3-3 6 6" />
+                  </svg>
+                  <b>ضع صورة المشروع هنا</b>
+                  <span>images/student-3.jpg</span>
+                </div>
+              </div>
+              <div class="student-card-body">
+                <h4>عنوان المشروع (عدّل النص)</h4>
+                <p>اسم الطالب أو وصف قصير عن المشروع.</p>
+              </div>
+            </div>
+
+            <div class="student-card">
+              <div class="student-img-wrap">
+                <img
+                  src="images/student-4.jpg"
+                  alt="صورة مشروع طالب 4"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="img-placeholder">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="4" width="18" height="15" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="M3 17l5-5 4 4 3-3 6 6" />
+                  </svg>
+                  <b>ضع صورة المشروع هنا</b>
+                  <span>images/student-4.jpg</span>
+                </div>
+              </div>
+              <div class="student-card-body">
+                <h4>عنوان المشروع (عدّل النص)</h4>
+                <p>اسم الطالب أو وصف قصير عن المشروع.</p>
+              </div>
+            </div>
+
+            <div class="student-card">
+              <div class="student-img-wrap">
+                <img
+                  src="images/student-5.jpg"
+                  alt="صورة مشروع طالب 5"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="img-placeholder">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="4" width="18" height="15" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="M3 17l5-5 4 4 3-3 6 6" />
+                  </svg>
+                  <b>ضع صورة المشروع هنا</b>
+                  <span>images/student-5.jpg</span>
+                </div>
+              </div>
+              <div class="student-card-body">
+                <h4>عنوان المشروع (عدّل النص)</h4>
+                <p>اسم الطالب أو وصف قصير عن المشروع.</p>
+              </div>
+            </div>
+
+            <div class="student-card">
+              <div class="student-img-wrap">
+                <img
+                  src="images/student-6.jpg"
+                  alt="صورة مشروع طالب 6"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="img-placeholder">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <rect x="3" y="4" width="18" height="15" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="M3 17l5-5 4 4 3-3 6 6" />
+                  </svg>
+                  <b>ضع صورة المشروع هنا</b>
+                  <span>images/student-6.jpg</span>
+                </div>
+              </div>
+              <div class="student-card-body">
+                <h4>عنوان المشروع (عدّل النص)</h4>
+                <p>اسم الطالب أو وصف قصير عن المشروع.</p>
               </div>
             </div>
           </div>
@@ -1552,6 +2065,348 @@
               تصميم مواقع للعملاء وبيع خدمات WordPress عبر منصات العمل الحر.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-majors">
+        <div class="majors-intro reveal">
+          <p>
+            هذا التخصص يبني أساسًا تقنيًا ومنطقيًا قويًا يفتح لك أبواب معظم
+            الكليات الجامعية — وأبرزها <b>كليات الهندسة بجميع تخصصاتها</b>، لأنك
+            تكون قد تدربت مسبقًا على البرمجة وحل المشكلات والتفكير المنظم.
+          </p>
+        </div>
+
+        <div class="majors-section-title">
+          <h3>كليات الهندسة</h3>
+          <span class="count-pill">13 تخصصًا</span>
+        </div>
+        <div class="majors-grid reveal">
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--blue)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="6" y="6" width="12" height="12" rx="2" />
+                <path
+                  d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"
+                />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة الحاسوب</h5>
+              <p>تصميم الأنظمة الحاسوبية والدوائر الرقمية.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--flame)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="8 6 2 12 8 18" />
+                <polyline points="16 6 22 12 16 18" />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة البرمجيات</h5>
+              <p>بناء وإدارة أنظمة برمجية كبيرة ومعقدة.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--mint)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z" />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة الشبكات وأمن المعلومات</h5>
+              <p>حماية البيانات وتأمين الأنظمة الرقمية.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-html)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+              </svg>
+            </div>
+            <div>
+              <h5>الهندسة الكهربائية</h5>
+              <p>الأنظمة الكهربائية والطاقة والتحكم.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-css)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2v6M8 8a6 6 0 018 0M5 5a10 10 0 0114 0" />
+                <circle cx="12" cy="20" r="2" fill="#fff" />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة الاتصالات والإلكترونيات</h5>
+              <p>الدارات الإلكترونية وأنظمة الاتصال.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-js)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
+                />
+              </svg>
+            </div>
+            <div>
+              <h5>الهندسة الميكانيكية</h5>
+              <p>تصميم الآلات والأنظمة الميكانيكية.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-bootstrap)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="4" y="3" width="16" height="18" />
+                <path d="M9 21v-4h6v4M9 7h.01M15 7h.01M9 11h.01M15 11h.01" />
+              </svg>
+            </div>
+            <div>
+              <h5>الهندسة المدنية</h5>
+              <p>تصميم وتنفيذ المباني والبنية التحتية.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-php)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
+                />
+              </svg>
+            </div>
+            <div>
+              <h5>الهندسة الصناعية</h5>
+              <p>تحسين خطوط الإنتاج وإدارة العمليات.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-sql)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="5" y="8" width="14" height="10" rx="2" />
+                <circle cx="9" cy="13" r="1.2" fill="#fff" />
+                <circle cx="15" cy="13" r="1.2" fill="#fff" />
+                <path d="M12 8V4M8 4h8" />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة الميكاترونكس والروبوتات</h5>
+              <p>دمج الميكانيكا والإلكترونيات والبرمجة.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-deploy)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 2v6L4 20a2 2 0 002 2h12a2 2 0 002-2L15 8V2" />
+                <path d="M9 2h6" />
+              </svg>
+            </div>
+            <div>
+              <h5>الهندسة الكيميائية</h5>
+              <p>العمليات الصناعية والتفاعلات الكيميائية.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-interactive)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path
+                  d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة الطاقة المتجددة</h5>
+              <p>الطاقة الشمسية وأنظمة الاستدامة.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--code-wp)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 3v18" />
+              </svg>
+            </div>
+            <div>
+              <h5>الهندسة المعمارية</h5>
+              <p>تصميم المباني والفراغات المعمارية.</p>
+            </div>
+          </div>
+
+          <div class="major-card">
+            <div class="m-ic" style="background: var(--blue)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 12l20-8-8 20-2-8-8-4z" />
+              </svg>
+            </div>
+            <div>
+              <h5>هندسة الطيران</h5>
+              <p>تصميم الطائرات وأنظمة الفضاء.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="majors-section-title">
+          <h3>تخصصات أخرى يمكنك الالتحاق بها</h3>
+        </div>
+        <div class="other-majors reveal">
+          <div class="major-group">
+            <h5>علوم الحاسوب وتقنية المعلومات</h5>
+            <div class="pill-list">
+              <span class="pill">علم الحاسوب</span>
+              <span class="pill">نظم المعلومات الإدارية</span>
+              <span class="pill">أمن المعلومات</span>
+              <span class="pill">الذكاء الاصطناعي وعلم البيانات</span>
+            </div>
+          </div>
+          <div class="major-group">
+            <h5>إدارة الأعمال والاقتصاد</h5>
+            <div class="pill-list">
+              <span class="pill">إدارة الأعمال</span>
+              <span class="pill">التسويق</span>
+              <span class="pill">المحاسبة</span>
+              <span class="pill">الاقتصاد</span>
+              <span class="pill">التمويل والمصارف</span>
+            </div>
+          </div>
+          <div class="major-group">
+            <h5>العلوم الأساسية</h5>
+            <div class="pill-list">
+              <span class="pill">الرياضيات</span>
+              <span class="pill">الفيزياء</span>
+              <span class="pill">الكيمياء</span>
+              <span class="pill">الأحياء</span>
+              <span class="pill">الإحصاء</span>
+            </div>
+          </div>
+          <div class="major-group">
+            <h5>التصميم والإعلام</h5>
+            <div class="pill-list">
+              <span class="pill">التصميم الجرافيكي</span>
+              <span class="pill">الوسائط المتعددة والألعاب</span>
+              <span class="pill">الإعلام والصحافة</span>
+            </div>
+          </div>
+          <div class="major-group">
+            <h5>الآداب والتربية</h5>
+            <div class="pill-list">
+              <span class="pill">اللغة الإنجليزية</span>
+              <span class="pill">الترجمة</span>
+              <span class="pill">التربية</span>
+              <span class="pill">علم النفس</span>
+              <span class="pill">العلوم الاجتماعية</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="majors-note">
+          هذه القائمة استرشادية وتغطي معظم التخصصات الجامعية غير الطبية وغير
+          القانونية. تأكد دائمًا من متطلبات القبول الخاصة بكل جامعة وبفرعك
+          الدراسي (علمي/أدبي) قبل التسجيل.
         </div>
       </div>
 
