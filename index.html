@@ -316,6 +316,9 @@
         .line-head {
           padding: 14px 24px;
         }
+        .grade-divider {
+          padding: 14px 24px 6px;
+        }
         .line-detail-in {
           padding: 14px 24px 18px 56px;
         }
@@ -344,12 +347,6 @@
         }
         .majors-note {
           margin: 8px 24px 10px;
-        }
-        .showcase {
-          padding: 28px 24px 10px;
-        }
-        .gallery {
-          grid-template-columns: 1fr;
         }
         .students-work {
           padding: 28px 24px 10px;
@@ -627,6 +624,16 @@
         background: var(--paper-2);
       }
 
+      .grade-divider {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        opacity: 0.65;
+        padding: 16px 60px 6px 24px;
+        direction: rtl;
+        background: var(--paper-2);
+      }
+
       .line-no {
         font-family: "JetBrains Mono", monospace;
         font-size: 14px;
@@ -730,10 +737,10 @@
 
       /* ---- Careers panel ---- */
       .careers {
-        padding: 26px 60px 10px;
+        padding: 10px 60px 10px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
       }
       .career-card {
         background: #fff;
@@ -899,64 +906,6 @@
         border-inline-start: 3px solid var(--mint);
       }
 
-      /* ---- Showcase ---- */
-      .showcase {
-        padding: 34px 60px 10px;
-      }
-      .showcase h2 {
-        font-family: "Cairo", sans-serif;
-        font-size: 21px;
-        font-weight: 800;
-        margin: 0 0 4px;
-      }
-      .showcase .sub {
-        font-family: "Tajawal", sans-serif;
-        font-size: 14px;
-        color: var(--ink-soft);
-        margin: 0 0 22px;
-      }
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-      .mockup {
-        perspective: 800px;
-      }
-      .mockup-card {
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        background: #fff;
-        box-shadow: 0 10px 20px -12px rgba(27, 31, 42, 0.25);
-        transition: transform 0.15s ease;
-        transform-style: preserve-3d;
-      }
-      .mockup-bar {
-        display: flex;
-        gap: 5px;
-        padding: 8px 10px;
-        background: var(--paper-2);
-      }
-      .mockup-bar span {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #c9c5b8;
-      }
-      .mockup svg {
-        width: 100%;
-        display: block;
-      }
-      .mockup-label {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11.5px;
-        color: var(--ink-soft);
-        text-align: center;
-        padding: 8px 0 2px;
-        direction: ltr;
-      }
-
       /* ---- CTA / terminal ---- */
       .terminal {
         margin: 36px 60px 56px;
@@ -1061,7 +1010,7 @@
       <div class="hero">
         <div class="hero-text reveal">
           <div class="eyebrow">
-            تخصص فني — الصف الحادي عشر والثاني عشر (التوجيهي)
+            تخصص صناعي — الصف الحادي عشر والثاني عشر (التوجيهي)
           </div>
           <h1>تصميم <span>صفحات الويب</span></h1>
           <p class="subhead">
@@ -1255,13 +1204,17 @@
           <div class="editor-title">
             <h2>خطة التعلّم</h2>
             <div>
-              <span class="filename">curriculum.build</span>
-              <div class="hint">اضغط على أي مادة لعرض تفاصيل أكثر</div>
+              <span class="filename">grade11-grade12.build</span>
+              <div class="hint">
+                7 وحدات دراسية — اضغط على أي وحدة لعرض دروسها
+              </div>
             </div>
           </div>
 
-          <!-- Line 01 -->
-          <div class="line reveal" data-i="1" style="transition-delay: 0.06s">
+          <div class="grade-divider">// ─── الصف الحادي عشر ───</div>
+
+          <!-- Unit 1 -->
+          <div class="line reveal" data-i="1" style="transition-delay: 0.05s">
             <div
               class="line-head"
               tabindex="0"
@@ -1275,6 +1228,65 @@
               "
             >
               <span class="line-no">01</span>
+              <span class="line-bar" style="background: var(--mint)"></span>
+              <span class="line-icon" style="background: var(--mint)">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12a7 7 0 0114 0M8 15a3.5 3.5 0 018 0M12 18h.01" />
+                </svg>
+              </span>
+              <div class="line-body">
+                <span class="tag" style="background: var(--mint)"
+                  >الوحدة 1</span
+                >
+                <h3 class="line-title">الإنترنت في حياتنا</h3>
+                <p class="line-desc">
+                  كيف نستخدم الإنترنت وبروتوكولاته في مواقف وخدمات حياتية يومية.
+                </p>
+              </div>
+              <svg
+                class="chev"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="line-detail">
+              <div class="line-detail-in">
+                <b>دروس الوحدة:</b>
+                <ul>
+                  <li>
+                    استخدام الإنترنت في الحصول على معلومات في مواقف حياتية
+                  </li>
+                  <li>استخدام بروتوكولات الإنترنت في خدمات حياتية</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 2 -->
+          <div class="line reveal" data-i="2" style="transition-delay: 0.1s">
+            <div
+              class="line-head"
+              tabindex="0"
+              role="button"
+              onclick="toggleLine(this)"
+              onkeydown="
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  toggleLine(this);
+                }
+              "
+            >
+              <span class="line-no">02</span>
               <span
                 class="line-bar"
                 style="background: var(--code-html)"
@@ -1292,12 +1304,11 @@
               </span>
               <div class="line-body">
                 <span class="tag" style="background: var(--code-html)"
-                  >HTML</span
+                  >HTML5</span
                 >
-                <h3 class="line-title">بناء هيكل الصفحة</h3>
+                <h3 class="line-title">لغة وصف صفحات الإنترنت</h3>
                 <p class="line-desc">
-                  الأساس الذي تُبنى عليه كل صفحة ويب — العناوين، الفقرات، الصور،
-                  والروابط.
+                  بناء هيكل صفحة الإنترنت بالكامل: نصوص، وسائط متعددة، ونماذج.
                 </p>
               </div>
               <svg
@@ -1312,80 +1323,21 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b>
+                <b>دروس الوحدة:</b>
                 <ul>
-                  <li>الوسوم الأساسية: العناوين، الفقرات، الروابط، الصور</li>
-                  <li>بناء النماذج (Forms) لجمع بيانات المستخدم</li>
-                  <li>الجداول لعرض البيانات المنظمة</li>
+                  <li>إنشاء صفحة إنترنت بسيطة باستخدام لغة HTML</li>
                   <li>
-                    الوسوم الدلالية (Semantic HTML5) لبنية احترافية تناسب محركات
-                    البحث
+                    استخدام العناصر النصية وتنظيم المحتوى في تصميم الصفحات
                   </li>
+                  <li>استخدام الوسائط المتعددة في تصميم صفحات الإنترنت</li>
+                  <li>استخدام النماذج في تصميم صفحات الإنترنت</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Line 02 -->
-          <div class="line reveal" data-i="2" style="transition-delay: 0.12s">
-            <div
-              class="line-head"
-              tabindex="0"
-              role="button"
-              onclick="toggleLine(this)"
-              onkeydown="
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  toggleLine(this);
-                }
-              "
-            >
-              <span class="line-no">02</span>
-              <span class="line-bar" style="background: var(--code-css)"></span>
-              <span class="line-icon" style="background: var(--code-css)">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                >
-                  <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" />
-                  <path d="M16 8H8l.4 4.5H15l-.4 4-2.6.9-2.6-.9-.2-2" />
-                </svg>
-              </span>
-              <div class="line-body">
-                <span class="tag" style="background: var(--code-css)">CSS</span>
-                <h3 class="line-title">التنسيق والتصميم البصري</h3>
-                <p class="line-desc">
-                  الألوان، الخطوط، والتخطيط — تحويل الهيكل إلى واجهة جميلة
-                  ومنظّمة.
-                </p>
-              </div>
-              <svg
-                class="chev"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </div>
-            <div class="line-detail">
-              <div class="line-detail-in">
-                <b>ستتعلم:</b>
-                <ul>
-                  <li>الألوان، الخطوط، والمسافات بين العناصر</li>
-                  <li>نظام Flexbox لتنظيم العناصر أفقيًا وعموديًا</li>
-                  <li>نظام Grid لتخطيطات متعددة الأعمدة</li>
-                  <li>التصميم المتجاوب (Responsive) عبر Media Queries</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Line 03 -->
-          <div class="line reveal" data-i="3" style="transition-delay: 0.18s">
+          <!-- Unit 3 -->
+          <div class="line reveal" data-i="3" style="transition-delay: 0.15s">
             <div
               class="line-head"
               tabindex="0"
@@ -1399,6 +1351,73 @@
               "
             >
               <span class="line-no">03</span>
+              <span class="line-bar" style="background: var(--code-css)"></span>
+              <span class="line-icon" style="background: var(--code-css)">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2"
+                >
+                  <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" />
+                  <path d="M16 8H8l.4 4.5H15l-.4 4-2.6.9-2.6-.9-.2-2" />
+                </svg>
+              </span>
+              <div class="line-body">
+                <span class="tag" style="background: var(--code-css)"
+                  >CSS3</span
+                >
+                <h3 class="line-title">لغة صفحات الأنماط الانسيابية</h3>
+                <p class="line-desc">
+                  تحسين مظهر الصفحة، ومعالجة الصور والمستندات والقوائم والجداول
+                  بصريًا.
+                </p>
+              </div>
+              <svg
+                class="chev"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="line-detail">
+              <div class="line-detail-in">
+                <b>دروس الوحدة:</b>
+                <ul>
+                  <li>استخدامات لغة CSS ومميزاتها</li>
+                  <li>
+                    توظيف خصائص وأكواد CSS3 لتحسين مظهر الصفحات وشكلها
+                    للمستخدمين
+                  </li>
+                  <li>
+                    توظيف خصائص وأكواد CSS3 لمعالجة الصور والمستندات داخل الصفحة
+                  </li>
+                  <li>
+                    توظيف خصائص وأكواد CSS3 لمعالجة القوائم والجداول داخل الصفحة
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit 4 -->
+          <div class="line reveal" data-i="4" style="transition-delay: 0.2s">
+            <div
+              class="line-head"
+              tabindex="0"
+              role="button"
+              onclick="toggleLine(this)"
+              onkeydown="
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  toggleLine(this);
+                }
+              "
+            >
+              <span class="line-no">04</span>
               <span class="line-bar" style="background: var(--code-js)"></span>
               <span class="line-icon" style="background: var(--code-js)">
                 <svg
@@ -1414,10 +1433,10 @@
                 <span class="tag" style="background: var(--code-js)"
                   >JavaScript</span
                 >
-                <h3 class="line-title">إضافة الحركة والتفاعل</h3>
+                <h3 class="line-title">جافا سكربت وBootstrap</h3>
                 <p class="line-desc">
-                  جعل الصفحة تستجيب لأفعال المستخدم — أزرار، نوافذ منبثقة،
-                  وتأثيرات حيّة.
+                  أساسيات البرمجة الحقيقية: متغيرات، شروط، حلقات تكرار — ثم
+                  تصميم متجاوب سريع بـ Bootstrap.
                 </p>
               </div>
               <svg
@@ -1432,81 +1451,25 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b>
+                <b>دروس الوحدة:</b>
                 <ul>
-                  <li>المتغيرات، الشروط، والحلقات التكرارية</li>
-                  <li>التعامل مع الأحداث (نقر، كتابة، تمرير)</li>
-                  <li>التحكم بعناصر الصفحة مباشرة (DOM)</li>
-                  <li>التحقق من صحة النماذج قبل الإرسال</li>
+                  <li>أساسيّات لغة جافا سكربت (أساسيات البرمجة)</li>
+                  <li>استخدام الجمل الشرطية في جافا سكربت لبناء برنامج</li>
+                  <li>استخدام حلقات التكرار والمصفوفات لبناء برنامج</li>
+                  <li>استخدام جافا سكربت للتعامل مع نماذج HTML</li>
+                  <li>
+                    استخدام مكتبة Bootstrap وأدواتها لإنشاء صفحات متجاوبة بسرعة
+                    وفعالية
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Line 04 -->
-          <div class="line reveal" data-i="4" style="transition-delay: 0.24s">
-            <div
-              class="line-head"
-              tabindex="0"
-              role="button"
-              onclick="toggleLine(this)"
-              onkeydown="
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  toggleLine(this);
-                }
-              "
-            >
-              <span class="line-no">04</span>
-              <span
-                class="line-bar"
-                style="background: var(--code-bootstrap)"
-              ></span>
-              <span class="line-icon" style="background: var(--code-bootstrap)">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18M9 21V9" />
-                </svg>
-              </span>
-              <div class="line-body">
-                <span class="tag" style="background: var(--code-bootstrap)"
-                  >Bootstrap</span
-                >
-                <h3 class="line-title">تصميم متجاوب باحتراف</h3>
-                <p class="line-desc">
-                  بناء صفحات تعمل بشكل مثالي على الجوال والحاسوب في وقت قياسي.
-                </p>
-              </div>
-              <svg
-                class="chev"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </div>
-            <div class="line-detail">
-              <div class="line-detail-in">
-                <b>ستتعلم:</b>
-                <ul>
-                  <li>نظام الشبكة (12 عمودًا) لتصميم متجاوب سريع</li>
-                  <li>مكوّنات جاهزة: أزرار، قوائم، بطاقات، نوافذ منبثقة</li>
-                  <li>تخصيص التصميم ليناسب هوية الموقع</li>
-                  <li>تسريع بناء الواجهات بشكل كبير مقارنة بالكود اليدوي</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div class="grade-divider">// ─── الصف الثاني عشر (التوجيهي) ───</div>
 
-          <!-- Line 05 -->
-          <div class="line reveal" data-i="5" style="transition-delay: 0.3s">
+          <!-- Unit 5 -->
+          <div class="line reveal" data-i="5" style="transition-delay: 0.25s">
             <div
               class="line-head"
               tabindex="0"
@@ -1534,10 +1497,10 @@
               </span>
               <div class="line-body">
                 <span class="tag" style="background: var(--code-php)">PHP</span>
-                <h3 class="line-title">برمجة جهة السيرفر</h3>
+                <h3 class="line-title">لغة PHP</h3>
                 <p class="line-desc">
-                  المنطق الخفي خلف الموقع — معالجة النماذج، وتنفيذ العمليات على
-                  السيرفر.
+                  الانتقال من البرمجة بجهة المستخدم إلى البرمجة بجهة السيرفر
+                  بأسلوب كائني التوجّه.
                 </p>
               </div>
               <svg
@@ -1552,19 +1515,17 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b>
+                <b>دروس الوحدة:</b>
                 <ul>
-                  <li>المتغيرات والدوال من جهة السيرفر</li>
-                  <li>استقبال ومعالجة بيانات النماذج</li>
-                  <li>الاتصال بقاعدة البيانات وتنفيذ الاستعلامات</li>
-                  <li>إدارة الجلسات (Sessions) وتسجيل الدخول</li>
+                  <li>أساسيّات لغة PHP</li>
+                  <li>توظيف البرمجة كائنيّة التوجّه (OOP) في PHP</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Line 06 -->
-          <div class="line reveal" data-i="6" style="transition-delay: 0.36s">
+          <!-- Unit 6 -->
+          <div class="line reveal" data-i="6" style="transition-delay: 0.3s">
             <div
               class="line-head"
               tabindex="0"
@@ -1593,10 +1554,13 @@
                 </svg>
               </span>
               <div class="line-body">
-                <span class="tag" style="background: var(--code-sql)">SQL</span>
-                <h3 class="line-title">إدارة قواعد البيانات</h3>
+                <span class="tag" style="background: var(--code-sql)"
+                  >قواعد البيانات</span
+                >
+                <h3 class="line-title">قواعد البيانات</h3>
                 <p class="line-desc">
-                  تخزين، تنظيم، واسترجاع بيانات المستخدمين والمحتوى بكفاءة.
+                  تخزين وإدارة البيانات، ثم ربطها بالموقع لصناعة صفحات تفاعليّة
+                  حقيقية.
                 </p>
               </div>
               <svg
@@ -1611,19 +1575,18 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b>
+                <b>دروس الوحدة:</b>
                 <ul>
-                  <li>إنشاء الجداول وتحديد أنواع البيانات</li>
-                  <li>أوامر الإضافة والتعديل والحذف والاستعلام (CRUD)</li>
-                  <li>الفلترة والفرز والاستعلامات المتقدمة</li>
-                  <li>العلاقات بين الجداول (قواعد بيانات علائقية)</li>
+                  <li>مفاهيم أساسية في قواعد البيانات</li>
+                  <li>إنشاء وإدارة قواعد البيانات</li>
+                  <li>الموقع التفاعلي</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Line 07 -->
-          <div class="line reveal" data-i="7" style="transition-delay: 0.42s">
+          <!-- Unit 7 -->
+          <div class="line reveal" data-i="7" style="transition-delay: 0.35s">
             <div
               class="line-head"
               tabindex="0"
@@ -1654,11 +1617,12 @@
               </span>
               <div class="line-body">
                 <span class="tag" style="background: var(--code-deploy)"
-                  >Deploy</span
+                  >نشر الموقع</span
                 >
-                <h3 class="line-title">رفع الموقع على السيرفر</h3>
+                <h3 class="line-title">عَوْلَمَة الموقع</h3>
                 <p class="line-desc">
-                  إخراج مشروعك من جهازك الشخصي إلى الإنترنت ليصبح متاحًا للجميع.
+                  إخراج المشروع من جهاز الطالب إلى الإنترنت، وصولًا لبناء موقع
+                  كامل بووردبريس.
                 </p>
               </div>
               <svg
@@ -1673,137 +1637,15 @@
             </div>
             <div class="line-detail">
               <div class="line-detail-in">
-                <b>ستتعلم:</b>
+                <b>دروس الوحدة:</b>
                 <ul>
-                  <li>اختيار استضافة مناسبة ورفع الملفات عبر FTP</li>
-                  <li>ربط اسم النطاق (Domain) بالموقع</li>
-                  <li>إعداد شهادة الأمان (SSL/HTTPS)</li>
-                  <li>ضبط قاعدة البيانات على السيرفر الحقيقي</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Line 08 -->
-          <div class="line reveal" data-i="8" style="transition-delay: 0.48s">
-            <div
-              class="line-head"
-              tabindex="0"
-              role="button"
-              onclick="toggleLine(this)"
-              onkeydown="
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  toggleLine(this);
-                }
-              "
-            >
-              <span class="line-no">08</span>
-              <span
-                class="line-bar"
-                style="background: var(--code-interactive)"
-              ></span>
-              <span
-                class="line-icon"
-                style="background: var(--code-interactive)"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                >
-                  <path d="M3 3l7 18 2.5-7.5L20 11 3 3z" />
-                </svg>
-              </span>
-              <div class="line-body">
-                <span class="tag" style="background: var(--code-interactive)"
-                  >Interactive</span
-                >
-                <h3 class="line-title">المواقع التفاعلية</h3>
-                <p class="line-desc">
-                  تطبيق كل ما سبق في بناء مشاريع حيّة تحاكي مواقع العالم
-                  الحقيقي.
-                </p>
-              </div>
-              <svg
-                class="chev"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </div>
-            <div class="line-detail">
-              <div class="line-detail-in">
-                <b>ستتعلم:</b>
-                <ul>
-                  <li>دمج الواجهة الأمامية والخلفية بمشروع واحد</li>
-                  <li>بناء لوحة تحكم (Dashboard) لإدارة المحتوى</li>
-                  <li>تسجيل الدخول وحسابات المستخدمين</li>
-                  <li>مشروع تخرج متكامل يحاكي مواقع حقيقية</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Line 09 -->
-          <div class="line reveal" data-i="9" style="transition-delay: 0.54s">
-            <div
-              class="line-head"
-              tabindex="0"
-              role="button"
-              onclick="toggleLine(this)"
-              onkeydown="
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  toggleLine(this);
-                }
-              "
-            >
-              <span class="line-no">09</span>
-              <span class="line-bar" style="background: var(--code-wp)"></span>
-              <span class="line-icon" style="background: var(--code-wp)">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M5 9l3 8 2-5 2 5 3-8" />
-                </svg>
-              </span>
-              <div class="line-body">
-                <span class="tag" style="background: var(--code-wp)"
-                  >WordPress</span
-                >
-                <h3 class="line-title">إدارة المواقع الجاهزة</h3>
-                <p class="line-desc">
-                  بناء وإدارة مواقع احترافية بسرعة، دون الحاجة لكتابة كل سطر كود
-                  يدويًا.
-                </p>
-              </div>
-              <svg
-                class="chev"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </div>
-            <div class="line-detail">
-              <div class="line-detail-in">
-                <b>ستتعلم:</b>
-                <ul>
-                  <li>تركيب ووردبريس وإعداد لوحة التحكم</li>
-                  <li>اختيار وتخصيص القوالب (Themes)</li>
-                  <li>استخدام الإضافات (Plugins) لتوسيع وظائف الموقع</li>
-                  <li>إدارة المحتوى والصفحات دون كتابة كود</li>
+                  <li>خدمات الويب ولوحة التحكم بالموقع الإلكتروني</li>
+                  <li>
+                    حجز اسم نطاق للموقع ونشره على خادم ويب مجاني، والتحديث عليه
+                  </li>
+                  <li>
+                    إنشاء موقع من خلال نظام إدارة المحتوى ووردبريس (WordPress)
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1850,13 +1692,7 @@
                     <circle cx="9" cy="10" r="2" />
                     <path d="M3 17l5-5 4 4 3-3 6 6" />
                   </svg>
-                  <!-- <b>ضع صورة المشروع هنا</b>
-                  <span>images/student-1.jpg</span> -->
                 </div>
-              </div>
-              <div class="student-card-body">
-                <!-- <h4>عنوان المشروع (عدّل النص)</h4>
-                <p>اسم الطالب أو وصف قصير عن المشروع.</p> -->
               </div>
             </div>
 
@@ -1881,13 +1717,7 @@
                     <circle cx="9" cy="10" r="2" />
                     <path d="M3 17l5-5 4 4 3-3 6 6" />
                   </svg>
-                  <!-- <b>ضع صورة المشروع هنا</b>
-                  <span>images/student-2.jpg</span> -->
                 </div>
-              </div>
-              <div class="student-card-body">
-                <!-- <h4>عنوان المشروع (عدّل النص)</h4>
-                <p>اسم الطالب أو وصف قصير عن المشروع.</p> -->
               </div>
             </div>
 
@@ -1912,13 +1742,7 @@
                     <circle cx="9" cy="10" r="2" />
                     <path d="M3 17l5-5 4 4 3-3 6 6" />
                   </svg>
-                  <!-- <b>ضع صورة المشروع هنا</b>
-                  <span>images/student-3.jpg</span> -->
                 </div>
-              </div>
-              <div class="student-card-body">
-                <!-- <h4>عنوان المشروع (عدّل النص)</h4>
-                <p>اسم الطالب أو وصف قصير عن المشروع.</p> -->
               </div>
             </div>
 
@@ -1943,13 +1767,7 @@
                     <circle cx="9" cy="10" r="2" />
                     <path d="M3 17l5-5 4 4 3-3 6 6" />
                   </svg>
-                  <!-- <b>ضع صورة المشروع هنا</b>
-                  <span>images/student-4.jpg</span> -->
                 </div>
-              </div>
-              <div class="student-card-body">
-                <!-- <h4>عنوان المشروع (عدّل النص)</h4>
-                <p>اسم الطالب أو وصف قصير عن المشروع.</p> -->
               </div>
             </div>
 
@@ -1974,13 +1792,7 @@
                     <circle cx="9" cy="10" r="2" />
                     <path d="M3 17l5-5 4 4 3-3 6 6" />
                   </svg>
-                  <!-- <b>ضع صورة المشروع هنا</b>
-                  <span>images/student-5.jpg</span> -->
                 </div>
-              </div>
-              <div class="student-card-body">
-                <!-- <h4>عنوان المشروع (عدّل النص)</h4>
-                <p>اسم الطالب أو وصف قصير عن المشروع.</p> -->
               </div>
             </div>
 
@@ -2005,13 +1817,7 @@
                     <circle cx="9" cy="10" r="2" />
                     <path d="M3 17l5-5 4 4 3-3 6 6" />
                   </svg>
-                  <!-- <b>ضع صورة المشروع هنا</b>
-                  <span>images/student-6.jpg</span> -->
                 </div>
-              </div>
-              <div class="student-card-body">
-                <!-- <h4>عنوان المشروع (عدّل النص)</h4>
-                <p>اسم الطالب أو وصف قصير عن المشروع.</p> -->
               </div>
             </div>
           </div>
@@ -2019,6 +1825,15 @@
       </div>
 
       <div class="tab-panel" id="panel-careers">
+        <div class="majors-intro reveal">
+          <p>
+            هذا التخصص ما بيعلّمك تصميم المواقع بس — أنت كمان بتاخذ
+            <b>أساسيات البرمجة الحقيقية</b> (متغيرات، جمل شرطية، حلقات تكرار،
+            مصفوفات) من خلال جافا سكربت وPHP، وهاي الأساسيات هي حجر الزاوية لأي
+            مسار برمجي أو هندسي تختاره بعدين. لذلك فرصك تمتد من العمل المباشر
+            بعد التوجيهي، إلى دراسة جامعية في الحاسوب أو الهندسة:
+          </p>
+        </div>
         <div class="careers reveal">
           <div class="career-card">
             <div class="ic" style="background: var(--code-css)">
@@ -2032,7 +1847,10 @@
               </svg>
             </div>
             <h4>مصمم واجهات (Front-End)</h4>
-            <p>بناء واجهات المواقع التي يراها المستخدم ويتفاعل معها مباشرة.</p>
+            <p>
+              بناء واجهات المواقع التي يراها المستخدم ويتفاعل معها مباشرة
+              باستخدام HTML وCSS وJavaScript.
+            </p>
           </div>
           <div class="career-card">
             <div class="ic" style="background: var(--code-php)">
@@ -2047,10 +1865,104 @@
               </svg>
             </div>
             <h4>مبرمج خلفية (Back-End)</h4>
-            <p>بناء منطق الموقع وقواعد بياناته باستخدام PHP وSQL.</p>
+            <p>
+              بناء منطق الموقع وقواعد بياناته باستخدام PHP والاستعلامات على
+              قواعد البيانات.
+            </p>
+          </div>
+          <div class="career-card">
+            <div class="ic" style="background: var(--blue)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="M3 9h18M9 4v16" />
+              </svg>
+            </div>
+            <h4>مطوّر مواقع متكامل (Full-Stack)</h4>
+            <p>
+              إتقان الواجهة والخلفية معًا، وبناء موقع كامل من الفكرة إلى النشر
+              بمفرده.
+            </p>
+          </div>
+          <div class="career-card">
+            <div class="ic" style="background: var(--code-sql)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+              >
+                <ellipse cx="12" cy="6" rx="8" ry="3" />
+                <path
+                  d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"
+                />
+              </svg>
+            </div>
+            <h4>مسؤول قواعد بيانات</h4>
+            <p>
+              تصميم وإدارة قواعد البيانات التي تخزّن محتوى المواقع وبيانات
+              المستخدمين.
+            </p>
+          </div>
+          <div class="career-card">
+            <div class="ic" style="background: var(--code-deploy)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+              >
+                <path d="M12 3v12M7 8l5-5 5 5" />
+                <path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" />
+              </svg>
+            </div>
+            <h4>مسؤول نشر واستضافة مواقع</h4>
+            <p>
+              ربط أسماء النطاقات، رفع المواقع على السيرفرات، ومتابعة عملها
+              وتحديثها.
+            </p>
           </div>
           <div class="career-card">
             <div class="ic" style="background: var(--code-wp)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M5 9l3 8 2-5 2 5 3-8" />
+              </svg>
+            </div>
+            <h4>أخصائي ووردبريس</h4>
+            <p>
+              بناء وإدارة مواقع احترافية جاهزة للعملاء بسرعة، دون كتابة كل
+              الأكواد يدويًا.
+            </p>
+          </div>
+          <div class="career-card">
+            <div class="ic" style="background: var(--code-js)">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+              >
+                <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+              </svg>
+            </div>
+            <h4>مبرمج مبتدئ (Junior Developer)</h4>
+            <p>
+              أساسيات البرمجة (المتغيرات، الشروط، الحلقات) تؤهلك للانطلاق بأي
+              لغة برمجة أخرى لاحقًا.
+            </p>
+          </div>
+          <div class="career-card">
+            <div class="ic" style="background: var(--flame)">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -2079,7 +1991,6 @@
 
         <div class="majors-section-title">
           <h3>تخصصات الهندسة</h3>
-          <span class="count-pill" style="display: none">13 تخصصًا</span>
         </div>
         <div class="majors-grid reveal">
           <div class="major-card">
@@ -2410,498 +2321,6 @@
         </div>
       </div>
 
-      <div class="showcase reveal" style="display: none">
-        <h2>نماذج مما ستبنيه</h2>
-        <p class="sub">
-          مخططات أولية (Wireframes) توضّح بنية وعناصر المواقع التي ستتدرّب على
-          بنائها فعليًا
-        </p>
-        <div class="gallery">
-          <!-- Portfolio -->
-          <div
-            class="mockup"
-            onmousemove="tilt(event, this)"
-            onmouseleave="untilt(this)"
-          >
-            <div class="mockup-card">
-              <div class="mockup-bar">
-                <span></span><span></span><span></span>
-              </div>
-              <svg
-                viewBox="0 0 300 230"
-                xmlns="http://www.w3.org/2000/svg"
-                font-family="Tajawal, Arial, sans-serif"
-              >
-                <rect width="300" height="230" fill="#FFFFFF" />
-                <!-- navbar -->
-                <rect x="0" y="0" width="300" height="36" fill="#1B1F2A" />
-                <circle cx="22" cy="18" r="6" fill="#E44D26" />
-                <text
-                  x="34"
-                  y="22"
-                  font-size="10"
-                  fill="#fff"
-                  text-anchor="start"
-                >
-                  designer.dev
-                </text>
-                <text
-                  x="278"
-                  y="22"
-                  font-size="9"
-                  fill="#C7CBD6"
-                  text-anchor="end"
-                >
-                  تواصل
-                </text>
-                <text
-                  x="245"
-                  y="22"
-                  font-size="9"
-                  fill="#C7CBD6"
-                  text-anchor="end"
-                >
-                  أعمالي
-                </text>
-                <!-- hero: avatar + name -->
-                <circle cx="150" cy="76" r="26" fill="#F3E7E2" />
-                <path
-                  d="M136 84 L146 66 L154 78 L162 64 L172 84 Z"
-                  fill="#E8B9A6"
-                />
-                <circle cx="141" cy="64" r="4" fill="#F0CDBE" />
-                <rect
-                  x="105"
-                  y="112"
-                  width="90"
-                  height="10"
-                  rx="5"
-                  fill="#1B1F2A"
-                />
-                <rect
-                  x="122"
-                  y="128"
-                  width="56"
-                  height="7"
-                  rx="3.5"
-                  fill="#B7B2A3"
-                />
-                <rect
-                  x="118"
-                  y="146"
-                  width="64"
-                  height="20"
-                  rx="6"
-                  fill="#E8562F"
-                />
-                <text
-                  x="150"
-                  y="160"
-                  font-size="9"
-                  fill="#fff"
-                  text-anchor="middle"
-                >
-                  تواصل معي
-                </text>
-                <!-- project grid -->
-                <g>
-                  <rect
-                    x="20"
-                    y="182"
-                    width="76"
-                    height="34"
-                    rx="5"
-                    fill="#F3F1EA"
-                  />
-                  <circle cx="35" cy="194" r="4.5" fill="#D8D4C8" />
-                  <path
-                    d="M20,216 L45,198 L58,208 L72,190 L96,216 Z"
-                    fill="#D8D4C8"
-                  />
-                </g>
-                <g>
-                  <rect
-                    x="112"
-                    y="182"
-                    width="76"
-                    height="34"
-                    rx="5"
-                    fill="#F3F1EA"
-                  />
-                  <circle cx="127" cy="194" r="4.5" fill="#D8D4C8" />
-                  <path
-                    d="M112,216 L137,198 L150,208 L164,190 L188,216 Z"
-                    fill="#D8D4C8"
-                  />
-                </g>
-                <g>
-                  <rect
-                    x="204"
-                    y="182"
-                    width="76"
-                    height="34"
-                    rx="5"
-                    fill="#F3F1EA"
-                  />
-                  <circle cx="219" cy="194" r="4.5" fill="#D8D4C8" />
-                  <path
-                    d="M204,216 L229,198 L242,208 L256,190 L280,216 Z"
-                    fill="#D8D4C8"
-                  />
-                </g>
-              </svg>
-            </div>
-            <div class="mockup-label">portfolio.html</div>
-          </div>
-
-          <!-- Online store -->
-          <div
-            class="mockup"
-            onmousemove="tilt(event, this)"
-            onmouseleave="untilt(this)"
-          >
-            <div class="mockup-card">
-              <div class="mockup-bar">
-                <span></span><span></span><span></span>
-              </div>
-              <svg
-                viewBox="0 0 300 230"
-                xmlns="http://www.w3.org/2000/svg"
-                font-family="Tajawal, Arial, sans-serif"
-              >
-                <rect width="300" height="230" fill="#FFFFFF" />
-                <!-- navbar -->
-                <rect x="0" y="0" width="300" height="36" fill="#2965F1" />
-                <text
-                  x="20"
-                  y="22"
-                  font-size="10"
-                  fill="#fff"
-                  text-anchor="start"
-                >
-                  متجري
-                </text>
-                <rect
-                  x="70"
-                  y="10"
-                  width="140"
-                  height="16"
-                  rx="8"
-                  fill="rgba(255,255,255,0.25)"
-                />
-                <text
-                  x="80"
-                  y="21"
-                  font-size="8"
-                  fill="#EAF0FF"
-                  text-anchor="start"
-                >
-                  بحث عن منتج...
-                </text>
-                <circle cx="272" cy="18" r="10" fill="rgba(255,255,255,0.2)" />
-                <path
-                  d="M267 14 h10 l-2 8 h-6 z M267 14 l-2 -4 M277 14 l2 -4"
-                  stroke="#fff"
-                  stroke-width="1.2"
-                  fill="none"
-                />
-                <!-- product grid: 2x2 -->
-                <!-- product 1 -->
-                <rect
-                  x="18"
-                  y="50"
-                  width="126"
-                  height="72"
-                  rx="6"
-                  fill="#F3F1EA"
-                />
-                <circle cx="45" cy="70" r="6" fill="#D8D4C8" />
-                <path
-                  d="M18,116 L52,92 L70,104 L96,80 L144,116 Z"
-                  fill="#D8D4C8"
-                />
-                <rect
-                  x="18"
-                  y="126"
-                  width="80"
-                  height="7"
-                  rx="3.5"
-                  fill="#1B1F2A"
-                />
-                <text
-                  x="18"
-                  y="146"
-                  font-size="10"
-                  font-weight="700"
-                  fill="#2965F1"
-                >
-                  ₪ 85
-                </text>
-                <text
-                  x="144"
-                  y="146"
-                  font-size="8"
-                  fill="#E9C13B"
-                  text-anchor="end"
-                >
-                  ★★★★☆
-                </text>
-                <!-- product 2 -->
-                <rect
-                  x="156"
-                  y="50"
-                  width="126"
-                  height="72"
-                  rx="6"
-                  fill="#F3F1EA"
-                />
-                <circle cx="183" cy="70" r="6" fill="#D8D4C8" />
-                <path
-                  d="M156,116 L190,92 L208,104 L234,80 L282,116 Z"
-                  fill="#D8D4C8"
-                />
-                <rect
-                  x="156"
-                  y="126"
-                  width="80"
-                  height="7"
-                  rx="3.5"
-                  fill="#1B1F2A"
-                />
-                <text
-                  x="156"
-                  y="146"
-                  font-size="10"
-                  font-weight="700"
-                  fill="#2965F1"
-                >
-                  ₪ 120
-                </text>
-                <text
-                  x="282"
-                  y="146"
-                  font-size="8"
-                  fill="#E9C13B"
-                  text-anchor="end"
-                >
-                  ★★★★★
-                </text>
-                <!-- add to cart button -->
-                <rect
-                  x="90"
-                  y="168"
-                  width="120"
-                  height="26"
-                  rx="7"
-                  fill="#2965F1"
-                />
-                <text
-                  x="150"
-                  y="185"
-                  font-size="10"
-                  fill="#fff"
-                  text-anchor="middle"
-                >
-                  أضف إلى السلة
-                </text>
-              </svg>
-            </div>
-            <div class="mockup-label">store.php</div>
-          </div>
-
-          <!-- Interactive blog -->
-          <div
-            class="mockup"
-            onmousemove="tilt(event, this)"
-            onmouseleave="untilt(this)"
-          >
-            <div class="mockup-card">
-              <div class="mockup-bar">
-                <span></span><span></span><span></span>
-              </div>
-              <svg
-                viewBox="0 0 300 230"
-                xmlns="http://www.w3.org/2000/svg"
-                font-family="Tajawal, Arial, sans-serif"
-              >
-                <rect width="300" height="230" fill="#FFFFFF" />
-                <!-- navbar -->
-                <rect x="0" y="0" width="300" height="36" fill="#0FA98D" />
-                <text
-                  x="20"
-                  y="22"
-                  font-size="10"
-                  fill="#fff"
-                  text-anchor="start"
-                >
-                  مدونتي
-                </text>
-                <text
-                  x="280"
-                  y="22"
-                  font-size="9"
-                  fill="#DFF7F0"
-                  text-anchor="end"
-                >
-                  المقالات
-                </text>
-                <!-- featured post -->
-                <rect
-                  x="18"
-                  y="50"
-                  width="264"
-                  height="70"
-                  rx="6"
-                  fill="#F0FBF8"
-                />
-                <circle cx="45" cy="72" r="7" fill="#B9EEE0" />
-                <path
-                  d="M18,120 L60,90 L84,104 L118,78 L200,120 Z"
-                  fill="#B9EEE0"
-                />
-                <rect
-                  x="132"
-                  y="66"
-                  width="130"
-                  height="9"
-                  rx="4.5"
-                  fill="#1B1F2A"
-                />
-                <rect
-                  x="132"
-                  y="82"
-                  width="140"
-                  height="6"
-                  rx="3"
-                  fill="#B7B2A3"
-                />
-                <rect
-                  x="132"
-                  y="94"
-                  width="100"
-                  height="6"
-                  rx="3"
-                  fill="#B7B2A3"
-                />
-                <text
-                  x="132"
-                  y="112"
-                  font-size="8"
-                  fill="#0FA98D"
-                  text-anchor="start"
-                >
-                  قبل يومين
-                </text>
-                <!-- article rows -->
-                <g>
-                  <rect
-                    x="18"
-                    y="132"
-                    width="46"
-                    height="34"
-                    rx="5"
-                    fill="#F0FBF8"
-                  />
-                  <path
-                    d="M18,166 L34,150 L42,158 L52,146 L64,166 Z"
-                    fill="#B9EEE0"
-                  />
-                  <rect
-                    x="72"
-                    y="136"
-                    width="120"
-                    height="7"
-                    rx="3.5"
-                    fill="#1B1F2A"
-                  />
-                  <rect
-                    x="72"
-                    y="150"
-                    width="150"
-                    height="5"
-                    rx="2.5"
-                    fill="#B7B2A3"
-                  />
-                  <text
-                    x="72"
-                    y="164"
-                    font-size="7.5"
-                    fill="#8A8676"
-                    text-anchor="start"
-                  >
-                    منذ 5 أيام
-                  </text>
-                </g>
-                <g>
-                  <rect
-                    x="18"
-                    y="176"
-                    width="46"
-                    height="34"
-                    rx="5"
-                    fill="#F0FBF8"
-                  />
-                  <path
-                    d="M18,210 L34,194 L42,202 L52,190 L64,210 Z"
-                    fill="#B9EEE0"
-                  />
-                  <rect
-                    x="72"
-                    y="180"
-                    width="120"
-                    height="7"
-                    rx="3.5"
-                    fill="#1B1F2A"
-                  />
-                  <rect
-                    x="72"
-                    y="194"
-                    width="150"
-                    height="5"
-                    rx="2.5"
-                    fill="#B7B2A3"
-                  />
-                  <text
-                    x="72"
-                    y="208"
-                    font-size="7.5"
-                    fill="#8A8676"
-                    text-anchor="start"
-                  >
-                    منذ أسبوع
-                  </text>
-                </g>
-                <!-- interactive icons: like / comment -->
-                <path
-                  d="M262 184 c-6 -6 -14 -1 -14 6 c0 6 8 11 14 16 c6 -5 14 -10 14 -16 c0 -7 -8 -12 -14 -6 z"
-                  fill="#C42D6B"
-                  transform="scale(0.6) translate(150,60)"
-                />
-                <text
-                  x="238"
-                  y="188"
-                  font-size="8"
-                  fill="#8A8676"
-                  text-anchor="start"
-                >
-                  24 إعجاب
-                </text>
-                <text
-                  x="238"
-                  y="202"
-                  font-size="8"
-                  fill="#8A8676"
-                  text-anchor="start"
-                >
-                  6 تعليقات
-                </text>
-              </svg>
-            </div>
-            <div class="mockup-label">blog-interactive.js</div>
-          </div>
-        </div>
-      </div>
-
       <div class="terminal reveal">
         <div class="row">
           <span class="prompt">$</span> npm start مستقبلك_الرقمي
@@ -3002,18 +2421,6 @@
       window.addEventListener("scroll", updateProgress);
       window.addEventListener("resize", updateProgress);
       updateProgress();
-
-      // Card tilt
-      function tilt(e, el) {
-        const card = el.querySelector(".mockup-card");
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-4px)`;
-      }
-      function untilt(el) {
-        el.querySelector(".mockup-card").style.transform = "none";
-      }
 
       // Theme toggle (light / dark editor theme)
       const themeBtn = document.getElementById("themeToggle");
