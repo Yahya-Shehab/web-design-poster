@@ -15,6 +15,30 @@
       rel="stylesheet"
     />
     <style>
+      .author-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Cairo", sans-serif;
+        font-weight: 700;
+        font-size: 13.5px;
+        color: var(--ink);
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: 0 4px 10px -4px rgba(27, 31, 42, 0.15);
+        padding: 7px 16px 7px 8px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+      }
+      .author-badge svg {
+        width: 20px;
+        height: 20px;
+        padding: 3px;
+        border-radius: 50%;
+        background: var(--flame);
+        color: #fff;
+        flex-shrink: 0;
+      }
       :root {
         --paper: #f5f4ef;
         --paper-2: #edebe3;
@@ -301,6 +325,7 @@
         .hero-art {
           width: 100%;
         }
+
         h1 {
           font-size: 40px;
         }
@@ -1009,10 +1034,25 @@
 
       <div class="hero">
         <div class="hero-text reveal">
+          <h1>تصميم <span>صفحات الويب</span></h1>
           <div class="eyebrow">
             تخصص صناعي — الصف الحادي عشر والثاني عشر (التوجيهي)
           </div>
-          <h1>تصميم <span>صفحات الويب</span></h1>
+          <div class="author-badge">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+            إعداد: م. يحيى شهاب
+          </div>
+
           <p class="subhead">
             من أول وسم <b>&lt;html&gt;</b> تكتبه، وصولًا إلى موقع كامل منشور على
             الإنترنت. تخصص يجمع بين <b>البرمجة</b> و<b>التصميم</b>، ويؤهلك لبناء
